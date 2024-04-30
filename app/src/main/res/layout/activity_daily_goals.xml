@@ -10,28 +10,31 @@
         android:id="@+id/submitButton3"
         android:layout_width="149dp"
         android:layout_height="63dp"
+        android:layout_marginTop="208dp"
         android:text="Submit"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="581dp" />
+        app:layout_constraintTop_toBottomOf="@+id/maxGoalContainer" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
         android:text="Daily Goals"
         android:textSize="40sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="73dp" />
+        app:layout_constraintBottom_toTopOf="@+id/activityContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/activityContainer"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="160dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,9 +44,9 @@
             android:id="@+id/activityEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:lines="1"
-            android:inputType="textActivity"
-            android:hint="Activity"/>
+            android:hint="Activity"
+            android:inputType="text"
+            android:lines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:lines="1"
-            android:inputType="textMinGoal"
+            android:inputType="text"
             android:hint="Minimum Hourly Goal"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -71,9 +74,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/maxGoalContainer"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="320dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,9 +86,9 @@
             android:id="@+id/maxGoalEditText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:lines="1"
-            android:inputType="textMaxGoal"
-            android:hint="Maximum Hourly Goal"/>
+            android:hint="Maximum Hourly Goal"
+            android:inputType="text"
+            android:lines="1" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
