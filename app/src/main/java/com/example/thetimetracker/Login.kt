@@ -34,7 +34,7 @@ class Login : AppCompatActivity() {
                         task ->
                         if(task.isSuccessful){
                             //Sign in success, navigate to home screen
-                            val intent = Intent(this, DailyGoalEntries::class.java)
+                            val intent = Intent(this, AddEntry::class.java)
                             startActivity(intent)
                             finish()
                         }else {
