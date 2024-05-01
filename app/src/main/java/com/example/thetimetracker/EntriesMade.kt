@@ -1,8 +1,13 @@
 package com.example.thetimetracker
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textview.MaterialTextView
 
 class EntriesMade : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,21 +23,28 @@ class EntriesMade : AppCompatActivity() {
 
 //        val category  = intent.getStringExtra("CATEGORY")
 
-        var textView2 = findViewById<TextInputEditText>(R.id.textView2).text.toString()
-        var textView3 = findViewById<TextInputEditText>(R.id.textView3).text.toString()
-        var textView4 = findViewById<TextInputEditText>(R.id.textView4).text.toString()
-        var textView5 = findViewById<TextInputEditText>(R.id.textView5).text.toString()
-        var textView6 = findViewById<TextInputEditText>(R.id.textView6).text.toString()
+        var textView2 = findViewById<TextView>(R.id.textView2)
+        var textView3 = findViewById<TextView>(R.id.textView3)
+        var textView4 = findViewById<TextView>(R.id.textView4)
+        var textView5 = findViewById<TextView>(R.id.textView5)
+        var textView6 = findViewById<TextView>(R.id.textView6)
+//        var textview7 = findViewById<>()
+        val backButton = findViewById<ImageView>(R.id.backButton)
 
 //        val textView7 = findViewById<TextInputEditText>(R.id.textView7).text.toString()
 
-        textView2 = "Task Name: $taskName"
-        textView3 = "Description: $description"
-        textView4 = "Start Time: $startTime"
-        textView5 = "End Time: $endTime"
-        textView6 = "Date: $date"
-//        textview7 = "Category: $category"
+        textView2.text = "Task Name: $taskName"
+        textView3.text = "Description: $description"
+        textView4.text = "Start Time: $startTime"
+        textView5.text = "End Time: $endTime"
+        textView6.text = "Date: $date"
+//        textview7.text = "Category: $category"
 
+
+        backButton.setOnClickListener{
+            val intent = Intent(this, AddEntry::class.java)
+            startActivity(intent)
+        }
 
 
     }

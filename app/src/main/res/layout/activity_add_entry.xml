@@ -144,7 +144,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/submitButton"
                 android:layout_width="149dp"
                 android:layout_height="63dp"
@@ -192,20 +192,32 @@
                 app:layout_constraintBottom_toTopOf="@+id/btnDate"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:id="@+id/categorytextbox"
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--                android:id="@+id/categorytextbox"-->
+<!--                android:layout_width="321dp"-->
+<!--                android:layout_height="41dp"-->
+<!--                android:layout_margin="16dp"-->
+<!--                android:layout_marginTop="7dp"-->
+<!--                android:layout_marginBottom="3dp"-->
+<!--                android:background="#D3D3D3"-->
+<!--                android:hint="@string/select"-->
+<!--                app:layout_constraintBottom_toTopOf="@+id/StartTime"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/Category"/>-->
+            <Spinner
+                android:id="@+id/categorySpinner"
                 android:layout_width="321dp"
                 android:layout_height="41dp"
                 android:layout_margin="16dp"
                 android:layout_marginTop="7dp"
                 android:layout_marginBottom="3dp"
                 android:background="#D3D3D3"
-                android:hint="@string/select"
                 app:layout_constraintBottom_toTopOf="@+id/StartTime"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Category"/>
+                app:layout_constraintTop_toBottomOf="@+id/Category" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
