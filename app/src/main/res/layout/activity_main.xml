@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/submitButton5"
+        android:id="@+id/signup_button"
         android:layout_width="149dp"
         android:layout_height="63dp"
         android:layout_marginTop="20dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/submitButton4"
+        android:id="@+id/login_button"
         android:layout_width="149dp"
         android:layout_height="63dp"
         android:layout_marginTop="20dp"
@@ -26,7 +26,7 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitButton5" />
+        app:layout_constraintTop_toBottomOf="@+id/signup_button" />
 
     <ImageView
         android:id="@+id/imageView"
