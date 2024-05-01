@@ -209,7 +209,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/StartTime"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Category">
+                app:layout_constraintTop_toBottomOf="@+id/Category"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
