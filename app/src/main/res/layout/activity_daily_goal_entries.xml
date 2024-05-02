@@ -53,8 +53,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp">
+            app:cardBackgroundColor="@color/purple_200"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:contentPadding="10dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"

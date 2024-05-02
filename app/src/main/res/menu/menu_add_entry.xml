@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_add_entries"
+        android:title="Add Entries"/>
+    <item
+        android:id="@+id/action_gl_entry"
+        android:title="Add daily goals" />
+    <item
+        android:id="@+id/made_add_entries"
+        android:title="Recorded entries"/>
+    <item
+        android:id="@+id/made_gl_entries"
+        android:title="Recorded daily goal"/>
+</menu>

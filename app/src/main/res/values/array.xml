@@ -1,0 +1,10 @@
+<resources>
+    <string-array name="Categories">
+        <item>Work</item>
+        <item>Personal</item>
+        <item>Health</item>
+        <item>Study</item>
+        <item>Errands</item>
+        <item>Social</item>
+    </string-array>
+</resources>
