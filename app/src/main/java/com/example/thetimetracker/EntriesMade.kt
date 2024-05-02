@@ -25,8 +25,8 @@ class EntriesMade : AppCompatActivity(), TaskAdapter.OnEditClickListener {
         val backButton = findViewById<ImageView>(R.id.backButton)
 
         backButton.setOnClickListener{
-//            val intent = Intent(this, AddEntry::class.java)
-//            startActivity(intent)
+            val intent = Intent(this, AddEntry::class.java)
+            startActivity(intent)
             finish()
         }
         taskAdapter.setOnEditClickListener(this)

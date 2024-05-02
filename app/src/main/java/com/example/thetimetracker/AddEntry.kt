@@ -19,7 +19,18 @@ import com.example.thetimetracker.DatabaseHelper
 
 class AddEntry : AppCompatActivity() {
 
+
+    private lateinit var taskNameEditText: TextInputEditText
+    private lateinit var descriptionEditText: TextInputEditText
+    private lateinit var categorySpinner: Spinner
+    private lateinit var btnStartTime: Button
+    private lateinit var btnEndTime: Button
+    private lateinit var btnDate: Button
+    private lateinit var btnImage: Button
+    private lateinit var submitButton: Button
+
     private lateinit var databaseHelper: DatabaseHelper
+    private var task: Task? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,15 +38,20 @@ class AddEntry : AppCompatActivity() {
 
         databaseHelper = DatabaseHelper(this)
 
-        val submitButton = findViewById<MaterialButton>(R.id.submitButton)
-
         val taskName = findViewById<TextInputEditText>(R.id.taskNameEditText)
         val description = findViewById<TextInputEditText>(R.id.descriptionEditText)
-
         val startTimeButton = findViewById<Button>(R.id.btnStartTime)
         val endTimeButton = findViewById<Button>(R.id.btnEndTime)
         val dateButton = findViewById<Button>(R.id.btnDate)
         val categorySpinner = findViewById<Spinner>(R.id.categorySpinner)
+        val submitButton = findViewById<MaterialButton>(R.id.submitButton)
+
+        task = intent.getParcelableExtra("task")
+
+        initializeViews()
+
+        populateViews()
+
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         val categories = arrayOf("Work", "Personal", "Health", "Study", "Errands", "Social")
@@ -74,8 +90,28 @@ class AddEntry : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
     }
 
+        private fun initializeViews() {
+            taskNameEditText = findViewById(R.id.taskNameEditText)
+            descriptionEditText = findViewById(R.id.descriptionEditText)
+            categorySpinner = findViewById(R.id.categorySpinner)
+            btnStartTime = findViewById(R.id.btnStartTime)
+            btnEndTime = findViewById(R.id.btnEndTime)
+            btnDate = findViewById(R.id.btnDate)
+            submitButton = findViewById(R.id.submitButton)
+        }
+
+        private fun populateViews() {
+            task?.let { task ->
+                taskNameEditText.setText(task.name)
+                descriptionEditText.setText(task.description)
+                btnStartTime.text = task.startTime
+                btnEndTime.text = task.endTime
+                btnDate.text = task.date
+            }
+        }
     // Function to show the time picker dialog
     private fun showTimePickerDialog(button: Button) {
         val currentTime = Calendar.getInstance()
