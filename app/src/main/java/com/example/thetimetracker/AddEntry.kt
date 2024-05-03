@@ -14,8 +14,11 @@ import com.google.android.material.textfield.TextInputLayout
 import org.w3c.dom.Text
 import java.util.*
 import android.app.TimePickerDialog
+import android.util.Log
+import androidx.drawerlayout.widget.DrawerLayout
 import com.example.thetimetracker.Task
 import com.example.thetimetracker.DatabaseHelper
+import com.google.android.material.navigation.NavigationView
 
 class AddEntry : AppCompatActivity() {
 
@@ -31,6 +34,9 @@ class AddEntry : AppCompatActivity() {
 
     private lateinit var databaseHelper: DatabaseHelper
     private var task: Task? = null
+
+    private lateinit var drawerLayout: DrawerLayout
+    private  lateinit var navView: NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,6 +95,28 @@ class AddEntry : AppCompatActivity() {
             val intent = Intent(this, EntriesMade::class.java)
             startActivity(intent)
             finish()
+        }
+
+        drawerLayout = findViewById(R.id.menu_drawer)
+        navView = findViewById(R.id.navigation_view)
+
+        navView.setNavigationItemSelectedListener { menuItem ->
+            menuItem.isChecked = true
+            drawerLayout.closeDrawers()
+            when (menuItem.itemId) {
+                R.id.nav_add -> {
+                    val AddTasks = Intent(this, AddEntry::class.java)
+                    startActivity(AddTasks)
+                    Log.d("Navigation", "Clicked on Add Entry")
+                }
+                R.id.nav_tasks -> {
+                    val EntriesMadeIntent = Intent(this, EntriesMade::class.java)
+                    startActivity(EntriesMadeIntent)
+                    Log.d("Navigation", "Clicked on Entries Made")
+                }
+                else -> Log.d("Navigation", "Unknown menu item clicked")
+            }
+            true
         }
 
     }

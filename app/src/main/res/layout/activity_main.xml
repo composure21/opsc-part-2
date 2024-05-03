@@ -1,57 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/signup_button"
-        android:layout_width="149dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="20dp"
-        android:text="Sign Up"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+    <!-- Main content layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/login_button"
-        android:layout_width="149dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="20dp"
-        android:text="Login"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_button" />
+        <!-- Your existing UI elements -->
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="769dp"
-        android:layout_height="1083dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227"
-        app:srcCompat="@drawable/cover_page" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signup_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_button"
+            android:layout_alignEnd="@id/login_button"
+            android:layout_marginTop="20dp"
+            android:text="Sign Up"
+            android:textSize="25sp" />
 
-    <TextView
-        android:id="@+id/textView4"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
+            android:layout_width="142dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="446dp"
+            android:layout_marginEnd="132dp"
+            android:text="Login"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cover_page" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:text="Time-Tracking App"
+            android:textColor="@android:color/white"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- NavigationView for the navigation drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="210dp"
-        android:layout_marginBottom="228dp"
-        android:text="Time-Tracking App"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
