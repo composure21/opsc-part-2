@@ -62,6 +62,7 @@ class TaskAdapter(private val context: Context) : RecyclerView.Adapter<TaskAdapt
         private val startTimeTextView: TextView = itemView.findViewById(R.id.textViewStartTime)
         private val endTimeTextView: TextView = itemView.findViewById(R.id.textViewEndTime)
         private val descriptionTextView: TextView = itemView.findViewById(R.id.textViewDescription)
+        private val textCategoryTextView: TextView = itemView.findViewById(R.id.textCategory)
         val btnDelete: Button = itemView.findViewById(R.id.btnDelete)
         val btnEdit: Button = itemView.findViewById(R.id.btnEdit)
 
@@ -71,6 +72,7 @@ class TaskAdapter(private val context: Context) : RecyclerView.Adapter<TaskAdapt
             startTimeTextView.text = task.startTime
             endTimeTextView.text = task.endTime
             descriptionTextView.text = task.description
+            textCategoryTextView.text = task.category
         }
     }
 }
